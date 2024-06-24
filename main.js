@@ -25,17 +25,17 @@ console.log("A mediana da array é:",mediana)
 
 //Moda
 let teste = []
+let moda = []
+let quantidade = {}
+let quantidadeMax = 0
 
-for(let i = 0; i < array.length; i++){
-    for(let j = 0; i < array.length; i++){
-        if(array[i] == array[j]){
-            if(array[i] > array[j]){
-                teste.push(array[i])
-            }else
-                teste.push(array[j])
-        }
+array.forEach(numero => {
+    quantidade[numero] = (quantidade[numero] || 0) + 1;
+    if (quantidade[numero] > quantidadeMax){
+        quantidadeMax = quantidade[numero]
+        moda = numero
     }
-}
+});
 
-console.log(teste)
+console.log("A moda é: " + moda)
 
